@@ -1,0 +1,10 @@
+
+<table>
+ <% @posts.each do |post| %>
+  <tr>
+  <td><%= link_to(post.title, {:controller=>:post,:action=>:show, :id=>post}) %></td>
+   <td><%= link_to 'Edit', edit_post_path(post) %></td>
+   <td><%= link_to 'Destroy', {:controller=>:post,:action=>:destroy, :id=>post}, :method=>:delete %></td>
+ </tr>
+<% end %>
+</table>
